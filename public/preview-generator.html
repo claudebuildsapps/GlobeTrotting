@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Image Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FFFAF0;
+        }
+        .preview-container {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #5D2E8C 0%, #2D7D46 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 90%;
+            z-index: 10;
+        }
+        h1 {
+            font-size: 72px;
+            margin: 0 0 20px 0;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        p {
+            font-size: 32px;
+            margin: 0 0 30px 0;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .rating-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .rating-badge {
+            padding: 12px 24px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .exceptional {
+            background-color: #5D2E8C;
+        }
+        .excellent {
+            background-color: #2D7D46;
+        }
+        .very-good {
+            background-color: #B45309;
+        }
+        .locations {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .location {
+            font-size: 28px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+        .world-map {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAwIDEyMDAiIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik0xNiA1MTZjMTAyLTEwMiAyMzQtMTQyIDM1MC0xNDUgMTggMzMgMzkgODggNTAgODQgOC0zLTQtNzYtNC03NiA1OS0xOSA5MCAxNSAxMjQgNTAgMzMgMzMgNDkgMjcgNjUgNDYgMCAyMCAyNCAzNSA0NSAxNSAzMC0zMCAxNS04MCAxMC05MCAxMDEtMjAgMTM2IDU1IDEzNiA1NSAyMC0xMCA3NS0zMCA3NS0zMCAwLTE1IDMwLTM1IDUwLTI1IDE1IDcgMTAgNDUgMTAgNDUgNDAgMTMgNTAgNjQgMzAgODkgMTAgMzAgNjAgNDUgODAgMzAgMzAtMjAgNTUtMjAgNzAtNDAgMzQtNDQgMjktODkgOTAtOTkgNDItNyA1NCAxMCA1OSA1MCAzIDI2LTIwIDMwLTUwIDQwLTM4IDEzLTU1IDQ3LTQwIDgwIDE4IDM5IDYwIDUwIDk5IDMwIDI5LTE1IDc4LTQwIDEwNS00MCAxNDQgMCAxNDQgMTIwIDc3IDE4OS0xNSAxNi0xNiA1NS0xIDcxIDIwIDIwIDUwIDIwIDY1IDQwIDIwIDI1IDEwIDY0LTEwIDg1LTI1IDI1LTM1IDEwLTQ1LTEwLTEwLTIwLTQwLTI1LTY1LTE1LTMwIDEyLTI1IDQ1LTYwIDYwLTM1IDE1LTgwIDUtMTE1LTEwLTMwLTEzLTIwLTU1LTYwLTYwLTQ2LTYtOTAgMjA5LTE1MCAxNDAgMTUtNTAtMTAwLTgwLTUwLTEzMHM1MCAwIDUwIDAgMjAtNTAgMjAtNTAgMzAgMCAzMCAwIC0xMC0zMC0xMC0zMGwzMC0yMCAyMC0zMCAyMC0xMCAzMCAwIDIwLTMwIDIwLTIwIDAtNDAtMTAtNDBzLTMwLTEwLTMwLTEwbDAtMzAtNDAtNDAtMTAtNDAtNDAtMTAtMjAtMjAtMzAtMTAtMjAtMzAgMTAtMTAgNTAgMzAgMjAtMTAgMTAtNDAgMjAtMTAgMTAtMzAtNDAtNDAgMC0zMC0yMC0yMC0yMC0zMC0yMC00MC01MC01MC03MC0yMC0zMC0yMC0zMC0xMC0yMC00MC0zMC01MC0zMC0yMC00MC0yMC0zMC0xMC0zMC0zMC02MC00MC02MC03MC00MC0yMC02MC0zMC00MC03MC00MC02MC00MCAwLTcwLTQwLTUwLTEwLTUwLTQwLTIwLTQwLTcwLTMwLTIwLTEwLTUwLTYwLTEwLTUwLTQwIDAtNTAtMzAtNDAtNjAtNDAtNDAtMzAtMjAtMjAtMzAtNTAtNDAtNDAtMTAtMzAtMTAtNDAtNDAtMTAtMzAtMjAtNjAtMTAtNTAtNTAtNDAtMTAtNTAtMTAtNTAtMTAtNDAtMTAgMC0yMC0yMC0yMC0yMC00MC0yMHoiLz48cGF0aCBkPSJNMjM3OSAxMTQ5YzItNy0xOS0zOC00My02Mi0zMS0zMC00NC0zNy01Mi0yOC0xOSAyMSA1IDQ0IDUzIDUyIDI0IDUgMzUgMTQgMzUgMzAgMCAxNSA0IDE4IDg4IDh6bS0xODktMjBjMTAtMjcgNy01Ni04LTgwLTE0LTIzLTMwLTI5LTU0LTIwLTIxIDgtMjMgMjYtMTggODAgMiA0NC0xIDYyLTEzIDcyLTIzIDE3LTg1IDYtMTM3LTI1LTkzLTU0LTEyOS0xMjQtMTM1LTI2NS0zLTY4LTktMTExLTE3LTEyNS0xOS0zMi01NiAxMC01MS01OSA0LTQ1LTE2LTk2LTU1LTEzOHMtNzYtNTYtMTQ0LTQwYy0zNCA4LTU3IDEtNTctMTktMS0zOC00Mi0xMTMtNzItMTMyLTQwLTI1LTQxLTUtMS0zMCAyMC0xMyA0NS0yNSA1NS0yOCAxMC0yIDE1LTktMTAtMTUtNSAwLTE1LTIwLTIwLTQ1cy01LTMwLTUtMzAgMTUtNSAzNS01YzQwIDAgMTEtMjQtNDAtMzVsLTIwLTUtMTUtMzVjLTMwLTcwLTIwLTg5IDYwLTExNCAzOC0xMiA0OS0xNSA1NS0xNSA3IDAgNy01IDAtMTVzLTctMTUgMC0xNWM2IDAgMTYtNCAyMC0xMCAyNS0zMCA3NS0xMCAxMDUtMTVsMjUtNWM1LTMgMTAtMyAxNSAwczE1LTEwIDIwLTI1YzExLTM0IDUtNDAtMzUtNDAgMC0yMC0xNS0yMC02MC0xNS00Mi00LTQyLTEwLTE1LTM1IDE4LTE3IDIwLTI2IDEwLTQwLTExLTE2LTExLTIzIDAtMzQgMTQtMTQgMTMtMTgtNS0yMC0xMi0xLTIyLTYtMjMtMTEtMS01IDIwLTkgNDgtOSA0NyAwIDUxLTIgNjEtMzIgNi0xOSAxNi0zOCAyMy00MyAyMC0xNSAxNS01MC0xMC03MC0yNy0yMS0yNS0zNSA0LTI1IDQwIDE0IDYyLTEgNjItNDAgMC0yMCAxMC0zNSA0NS02NiAyNS0yMiA0NS00MyA0NS00N3M2OS02IDE1My0xYzgzIDQgMTY3IDggMTg3IDggMzMgMCAzNy0zIDQwLTI5IDUtNTMgNDAtMTA0IDkwLTEzMiA0Mi0yNCA0OC0yNCA3NS0xMCA0NSAyNSAxMDEgMjMgMTk1LTYgMzYtMTEgMzgtMTQgMzgtNTEgMC0zNiAxLTM5IDI5LTQyIDM3LTMgOTEtMzMgOTEtNTAgMC0xMy0zMS0yMi02Ny0yMC0xMSAxLTMyIDE0LTQ3IDMwLTIyIDIzLTMwIDI3LTQ2IDE5LTI1LTEyLTI1LTQ0IDAtNjkgMTgtMTggMjYtMjAgNjAtMTMgNTMgMTEgMTE2IDMgMTUxLTIxIDM3LTI0IDUzLTUyIDM5LTY1LTYtNS0zOC05LTcxLTktMzQgMC02Mi0xLTYzLTMtMS0xLTQtMjEtNi00MyA0LTQxLTktNTMtNjUtNTktMzQtMy0xMS0yMS01NS00MC0xOC04LTQ0LTI2LTU4LTQxLTE1LTE0LTMyLTI1LTM5LTI1cy0yMS0xMS0zMi0yNWMtMTItMTYtMjgtMjUtMzktMjVzLTItMTAgMzgtNDBjMzAtMjIgNTEtNDQgNTEtNTQgMC0yMS0zMi0zNC01NS0yMi0xMCA1LTIxIDktMjQgOS0xMiAwLTggMzcgNSA1NCAyNCAzMCA1IDk0LTQwIDEzNy0yMiAyMS0zNSA0NS0zMCA1MyAxMSAxOCA3NiA5IDE1Ni0yMSAzOS0xNSA4OC00MTMgNjQtNTEzLTktMzdtLTMyOSAxMzVjLTI0LTI2LTU1LTQ0LTEyMS03MC05MS0zNS0xMTAtMzUtMTY0IDAtNzEgNDctODQgNzktODQgMjA1IDAgMTA3IDggMTI5IDQ1IDE0MCAxNSA0IDE1IDggMCA0MSAtMjcgNTgtMzQgMTU1LTEzIDE5NSAyNiA1MSA5MyA2OSAxNjkgNDUgMTI3LTQwIDE4My0xMzEgMjY3LTQzMCAxNS01NSA2LTEwMC0zMC0xNTAtMzUtNDkgLTQ1LTc1LTQ1LTExNnMtNy04Ni0yNC0xMjZ6bS05MTcgNTU1Yy0xOS0yNi00My00MHoiLz48L3N2Zz4=');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        .stars {
+            font-size: 28px;
+            letter-spacing: -2px;
+            color: #F6AD55;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <div class="world-map"></div>
+        <div class="content">
+            <h1>Digital Nomad Location Comparison</h1>
+            <p>Interactive rankings of the best global locations for streamers with detailed insights on cost, earnings potential, and lifestyle</p>
+            
+            <div class="rating-badges">
+                <div class="rating-badge exceptional">Athens</div>
+                <div class="rating-badge excellent">Lisbon</div>
+                <div class="rating-badge very-good">Sofia</div>
+            </div>
+            
+            <div class="stars">★★★★★★★★★★</div>
+            
+            <div class="locations">
+                <div class="location">🏛️ Europe</div>
+                <div class="location">🌇 Asia</div>
+                <div class="location">🏙️ Americas</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // This will automatically download the image when the page loads
+        // Comment out if you prefer to take a screenshot manually
+        /*
+        setTimeout(() => {
+            const container = document.querySelector('.preview-container');
+            html2canvas(container).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'preview.jpg';
+                link.href = canvas.toDataURL('image/jpeg', 0.9);
+                link.click();
+            });
+        }, 1000);
+        */
+    </script>
+</body>
+</html>
