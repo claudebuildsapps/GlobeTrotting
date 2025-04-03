@@ -21,14 +21,14 @@
       case 'rating': return [a.rating, b.rating];
       case 'cost': return [getRatingValue(a.costLevel), getRatingValue(b.costLevel)];
       case 'earnings': return [getRatingValue(a.earnings.level), getRatingValue(b.earnings.level)];
-      case 'financial': return [getRatingValue(a.financialOpportunities.level), getRatingValue(b.financialOpportunities.level)];
+      case 'financial': return [a.financialOpportunities.score, b.financialOpportunities.score];
       case 'food': return [a.foodQuality.score, b.foodQuality.score];
-      case 'social': return [getRatingValue(a.socialOpportunities.level), getRatingValue(b.socialOpportunities.level)];
-      case 'quality': return [getRatingValue(a.qualityOfLife.level), getRatingValue(b.qualityOfLife.level)];
-      case 'benefits': return [getRatingValue(a.benefits.level), getRatingValue(b.benefits.level)];
-      case 'disadvantages': return [getRatingValue(a.disadvantages.level), getRatingValue(b.disadvantages.level)];
-      case 'internet': return [getRatingValue(a.internet.level), getRatingValue(b.internet.level)];
-      case 'legal': return [getRatingValue(a.legalEase.level), getRatingValue(b.legalEase.level)];
+      case 'social': return [a.socialOpportunities.score, b.socialOpportunities.score];
+      case 'quality': return [a.qualityOfLife.score, b.qualityOfLife.score];
+      case 'benefits': return [a.benefits.score, b.benefits.score];
+      case 'disadvantages': return [a.disadvantages.score, b.disadvantages.score];
+      case 'internet': return [a.internet.score, b.internet.score];
+      case 'legal': return [a.legalEase.score, b.legalEase.score];
       case 'adventure': return [a.adventure.score, b.adventure.score];
       default: return [a.rating, b.rating];
     }
@@ -43,11 +43,6 @@
       'moderate': 1
     };
     return ratings[ratingLevel] || 0;
-  }
-  
-  function getStarRating(level) {
-    const stars = getRatingValue(level);
-    return '★★★★★'.substring(0, stars);
   }
   
   function handleSort(column) {
@@ -112,7 +107,8 @@
           <CellContent 
             ratingText={location.ratingLevel} 
             valueText={`${location.rating}/10`} 
-            ratingClass={`rating-${location.ratingLevel}`} 
+            ratingClass={`rating-${location.ratingLevel}`}
+            ratingScore={location.rating / 2} 
           />
         </td>
         
@@ -120,9 +116,28 @@
         <td>
           <CellContent 
             ratingText={location.costLevel} 
-            valueText={`€${location.costOfLiving}`} 
-            ratingClass={`rating-${location.costLevel}`} 
-          />
+            valueText={null}
+            ratingClass={`rating-${location.costLevel}`}
+            ratingScore={getRatingValue(location.costLevel)} 
+          >
+            <div class="cost-breakdown">
+              <div class="cost-option">
+                <span class="cost-label">Budget:</span>
+                <span class="cost-amount">€{location.costOfLiving.low}</span>
+                <span class="cost-desc">{location.costOfLiving.lowDesc}</span>
+              </div>
+              <div class="cost-option">
+                <span class="cost-label">Mid-range:</span>
+                <span class="cost-amount">€{location.costOfLiving.mid}</span>
+                <span class="cost-desc">{location.costOfLiving.midDesc}</span>
+              </div>
+              <div class="cost-option">
+                <span class="cost-label">Luxury:</span>
+                <span class="cost-amount">€{location.costOfLiving.high}</span>
+                <span class="cost-desc">{location.costOfLiving.highDesc}</span>
+              </div>
+            </div>
+          </CellContent>
         </td>
         
         <!-- Earnings cell -->
@@ -131,7 +146,8 @@
             ratingText={location.earnings.level} 
             valueText={`€${location.earnings.range}/day`} 
             description={location.earnings.notes}
-            ratingClass={`rating-${location.earnings.level}`} 
+            ratingClass={`rating-${location.earnings.level}`}
+            ratingScore={getRatingValue(location.earnings.level)} 
           />
         </td>
         
@@ -139,9 +155,9 @@
         <td>
           <CellContent 
             ratingText={location.financialOpportunities.level} 
-            valueText={getStarRating(location.financialOpportunities.level)} 
             description={location.financialOpportunities.description}
-            ratingClass={`rating-${location.financialOpportunities.level}`} 
+            ratingClass={`rating-${location.financialOpportunities.level}`}
+            ratingScore={location.financialOpportunities.score} 
           />
         </td>
         
@@ -151,7 +167,8 @@
             ratingText={location.foodQuality.level} 
             valueText={`${location.foodQuality.score}/10`} 
             description={location.foodQuality.description}
-            ratingClass={`rating-${location.foodQuality.level}`} 
+            ratingClass={`rating-${location.foodQuality.level}`}
+            ratingScore={location.foodQuality.score / 2} 
           />
         </td>
         
@@ -159,9 +176,9 @@
         <td>
           <CellContent 
             ratingText={location.socialOpportunities.level} 
-            valueText={getStarRating(location.socialOpportunities.level)} 
             description={location.socialOpportunities.description}
-            ratingClass={`rating-${location.socialOpportunities.level}`} 
+            ratingClass={`rating-${location.socialOpportunities.level}`}
+            ratingScore={location.socialOpportunities.score} 
           />
         </td>
         
@@ -169,9 +186,9 @@
         <td>
           <CellContent 
             ratingText={location.qualityOfLife.level} 
-            valueText={getStarRating(location.qualityOfLife.level)} 
             description={location.qualityOfLife.description}
-            ratingClass={`rating-${location.qualityOfLife.level}`} 
+            ratingClass={`rating-${location.qualityOfLife.level}`}
+            ratingScore={location.qualityOfLife.score} 
           />
         </td>
         
@@ -179,9 +196,9 @@
         <td>
           <CellContent 
             ratingText={location.benefits.level} 
-            valueText={getStarRating(location.benefits.level)} 
             description={location.benefits.description}
-            ratingClass={`rating-${location.benefits.level}`} 
+            ratingClass={`rating-${location.benefits.level}`}
+            ratingScore={location.benefits.score} 
           />
         </td>
         
@@ -189,9 +206,9 @@
         <td>
           <CellContent 
             ratingText={location.disadvantages.level} 
-            valueText={getStarRating(location.disadvantages.level)} 
             description={location.disadvantages.description}
-            ratingClass={`rating-${location.disadvantages.level}`} 
+            ratingClass={`rating-${location.disadvantages.level}`}
+            ratingScore={location.disadvantages.score} 
           />
         </td>
         
@@ -199,9 +216,9 @@
         <td>
           <CellContent 
             ratingText={location.internet.level} 
-            valueText={getStarRating(location.internet.level)} 
             description={location.internet.description}
-            ratingClass={`rating-${location.internet.level}`} 
+            ratingClass={`rating-${location.internet.level}`}
+            ratingScore={location.internet.score} 
           />
         </td>
         
@@ -209,9 +226,9 @@
         <td>
           <CellContent 
             ratingText={location.legalEase.level} 
-            valueText={getStarRating(location.legalEase.level)} 
             description={location.legalEase.description}
-            ratingClass={`rating-${location.legalEase.level}`} 
+            ratingClass={`rating-${location.legalEase.level}`}
+            ratingScore={location.legalEase.score} 
           />
         </td>
         
@@ -221,7 +238,8 @@
             ratingText={location.adventure.level} 
             valueText={`${location.adventure.score}/10`} 
             description={location.adventure.description}
-            ratingClass={`rating-${location.adventure.level}`} 
+            ratingClass={`rating-${location.adventure.level}`}
+            ratingScore={location.adventure.score / 2} 
           />
         </td>
       </tr>
@@ -269,5 +287,42 @@
     vertical-align: top;
     background-color: white;
     min-width: 150px;
+  }
+  
+  /* Cost of living breakdown styles */
+  :global(.cost-breakdown) {
+    margin-top: 10px;
+  }
+  
+  :global(.cost-option) {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dotted #e2e8f0;
+  }
+  
+  :global(.cost-option:last-child) {
+    border-bottom: none;
+  }
+  
+  :global(.cost-label) {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 3px;
+    color: #2D3748;
+  }
+  
+  :global(.cost-amount) {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #2C5282;
+    display: block;
+    margin-bottom: 3px;
+  }
+  
+  :global(.cost-desc) {
+    font-size: 0.9em;
+    color: #718096;
+    display: block;
+    line-height: 1.4;
   }
 </style>
