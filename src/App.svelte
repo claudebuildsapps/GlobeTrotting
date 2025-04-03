@@ -39,7 +39,7 @@
   h1 {
     text-align: center;
     margin-bottom: 30px;
-    color: #5D4037; /* Match table header */
+    color: #A87F65; /* Lighter brown for title text */
     text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   }
   
