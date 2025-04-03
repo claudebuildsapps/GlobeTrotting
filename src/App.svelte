@@ -32,14 +32,15 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #EDF2F7;
-    color: #2D3748;
+    background-color: #FBF7EF; /* Warm cream color */
+    color: #433422; /* Warm dark brown */
   }
   
   h1 {
     text-align: center;
     margin-bottom: 30px;
-    color: #2C5282;
+    color: #5D4037; /* Match table header */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   }
   
   .table-container {

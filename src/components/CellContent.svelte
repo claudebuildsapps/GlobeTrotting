@@ -5,32 +5,23 @@
   export let ratingClass = '';
   export let ratingScore = 0; // Numeric score for star display
   export let factors = []; // Factors that contributed to the rating
-  export let useRectangles = false; // Whether to use rectangles instead of stars
   export let pointScore = 0; // Numeric point score (out of 100)
   
-  // Function to create star rating with half-star support
+  // Function to create star rating out of 10 (no half stars)
   function getStarRating(score) {
-    const fullStars = Math.floor(score);
-    const hasHalfStar = score % 1 >= 0.5;
+    // Convert score to be out of 10
+    const adjustedScore = Math.min(Math.round(score * 2), 10);
     
     let stars = '';
-    const symbol = useRectangles ? '■' : '★';
-    const emptySymbol = useRectangles ? '□' : '☆';
     
-    // Add full stars/rectangles
-    for (let i = 0; i < fullStars; i++) {
-      stars += symbol;
+    // Add filled stars
+    for (let i = 0; i < adjustedScore; i++) {
+      stars += '★';
     }
     
-    // Add half star/rectangle if needed
-    if (hasHalfStar) {
-      stars += useRectangles ? '▣' : '⯪'; // Half-filled symbol
-    }
-    
-    // Add empty stars/rectangles to make total of 5
-    const emptySlotsNeeded = 5 - fullStars - (hasHalfStar ? 1 : 0);
-    for (let i = 0; i < emptySlotsNeeded; i++) {
-      stars += emptySymbol;
+    // Add empty stars to make total of 10
+    for (let i = adjustedScore; i < 10; i++) {
+      stars += '☆';
     }
     
     return stars;
@@ -41,10 +32,8 @@
   <div class="cell-rating {ratingClass}">{ratingText}</div>
   
   <!-- Score display -->
-  <div class="cell-points-row">
-    <div class="cell-stars">{getStarRating(ratingScore)}</div>
-    <div class="cell-points">{pointScore}/100</div>
-  </div>
+  <div class="cell-stars">{getStarRating(ratingScore)}</div>
+  <div class="cell-points">{pointScore || 0}/100</div>
   
   {#if valueText}
     <div class="cell-value">{valueText}</div>
@@ -79,36 +68,33 @@
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 8px;
-    border-radius: 4px;
-    padding: 4px 8px;
+    border-radius: 10px; /* More rounded corners */
+    padding: 4px 10px;
     display: inline-block;
     letter-spacing: 0.5px;
     font-size: 0.8em;
     text-align: center;
-  }
-  
-  .cell-points-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
-    gap: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
   
   .cell-stars {
-    font-size: 1.2em;
+    margin-bottom: 4px;
+    font-size: 1.1em;
     text-align: center;
     color: #F6AD55; /* Amber color for stars */
+    letter-spacing: -1px;
   }
   
   .cell-points {
     font-weight: 700;
-    font-size: 0.9em;
-    color: #553C9A; /* Deep purple */
-    background-color: #F7FAFC;
-    padding: 2px 6px;
+    font-size: 0.85em;
+    margin: 0 auto 12px;
+    color: #FFFFFF;
+    background-color: #553C9A;
+    padding: 2px 8px;
     border-radius: 10px;
-    border: 1px solid #E9D8FD;
+    text-align: center;
+    display: inline-block;
   }
   
   .cell-value {
@@ -151,29 +137,29 @@
     line-height: 1.5;
   }
   
-  /* Rating classes applied through the ratingClass prop - reordered by appeal */
+  /* New vibrant color palette - earth tones with pop accents */
   :global(.rating-exceptional) { 
-    background-color: #553C9A; /* Deep purple */
+    background-color: #5D2E8C; /* Deep purple */
     color: white;
   }
   
   :global(.rating-excellent) { 
-    background-color: #2B6CB0; /* Royal blue */
+    background-color: #2D7D46; /* Forest green */
     color: white;
   }
   
   :global(.rating-very-good) { 
-    background-color: #3182CE; /* Medium blue */
+    background-color: #B45309; /* Amber gold */
     color: white;
   }
   
   :global(.rating-good) { 
-    background-color: #4299E1; /* Light blue */
+    background-color: #C05621; /* Terracotta */
     color: white;
   }
   
   :global(.rating-moderate) { 
-    background-color: #E9D8FD; /* Soft purple */
-    color: #44337A; /* Dark purple for contrast */
+    background-color: #9F580A; /* Bronze */
+    color: white;
   }
 </style>
