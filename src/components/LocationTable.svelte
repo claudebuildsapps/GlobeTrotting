@@ -81,17 +81,6 @@
     return points[level] || 50;
   }
   
-  function getDefaultScore(level) {
-    const scores = {
-      'exceptional': 5.0,
-      'excellent': 4.0,
-      'very good': 3.5,
-      'good': 2.5,
-      'moderate': 1.5
-    };
-    return scores[level] || 2.5;
-  }
-  
   // Helper function to get emoji for location
   function getLocationEmoji(locationName) {
     const emojiMap = {
@@ -354,9 +343,7 @@
         <td>
           <CellContent 
             ratingText={location.ratingLevel} 
-            valueText={`${location.rating}/10`} 
             ratingClass={`rating-${location.ratingLevel}`}
-            ratingScore={location.rating / 2}
             pointScore={Math.round(location.rating * 10)}
             factors={location.ratingFactors || [
               "Overall livability assessment",
@@ -373,9 +360,7 @@
         <td>
           <CellContent 
             ratingText={location.costLevel} 
-            valueText={null}
             ratingClass={`rating-${location.costLevel}`}
-            ratingScore={getRatingValue(location.costLevel)}
             pointScore={location.costOfLiving.points || getDefaultPoints(location.costLevel)}
             factors={location.costOfLiving.factors || [
               "Housing affordability and availability",
@@ -428,9 +413,7 @@
         <td>
           <CellContent 
             ratingText={location.earnings.level} 
-            valueText={null} 
             ratingClass={`rating-${location.earnings.level}`}
-            ratingScore={getRatingValue(location.earnings.level)}
             pointScore={location.earnings.points || getDefaultPoints(location.earnings.level)}
             factors={location.earnings.factors || [
               "Time zone advantage for target audience",
@@ -471,7 +454,6 @@
             ratingText={location.financialOpportunities.level} 
             description={location.financialOpportunities.description}
             ratingClass={`rating-${location.financialOpportunities.level}`}
-            ratingScore={location.financialOpportunities.score || getDefaultScore(location.financialOpportunities.level)}
             pointScore={location.financialOpportunities.points || getDefaultPoints(location.financialOpportunities.level)}
             factors={location.financialOpportunities.factors || [
               "Tax advantages and structure",
@@ -487,10 +469,8 @@
         <td>
           <CellContent 
             ratingText={location.foodQuality.level} 
-            valueText={`${location.foodQuality.score}/10`} 
             description={location.foodQuality.description || `${location.name} offers ${location.foodQuality.level} food quality with a variety of dining options at different price points. Local specialties are ${location.foodQuality.level === 'exceptional' || location.foodQuality.level === 'excellent' ? 'outstanding' : 'good'}, and ingredients are generally fresh and high quality.`}
             ratingClass={`rating-${location.foodQuality.level}`}
-            ratingScore={location.foodQuality.score / 2}
             pointScore={location.foodQuality.points || getDefaultPoints(location.foodQuality.level)}
             factors={location.foodQuality.factors || [
               "Local cuisine quality and variety",
@@ -508,7 +488,6 @@
             ratingText={location.socialOpportunities.level} 
             description={location.socialOpportunities.description || `${location.name} provides ${location.socialOpportunities.level} social opportunities for digital nomads and content creators. The international community is ${location.socialOpportunities.level === 'exceptional' || location.socialOpportunities.level === 'excellent' ? 'vibrant and welcoming' : 'present but more limited'}.`}
             ratingClass={`rating-${location.socialOpportunities.level}`}
-            ratingScore={location.socialOpportunities.score || getDefaultScore(location.socialOpportunities.level)}
             pointScore={location.socialOpportunities.points || getDefaultPoints(location.socialOpportunities.level)}
             factors={location.socialOpportunities.factors || [
               "Digital nomad community presence",
@@ -526,7 +505,6 @@
             ratingText={location.qualityOfLife.level} 
             description={location.qualityOfLife.description || `${location.name} offers a ${location.qualityOfLife.level} quality of life with balanced amenities and lifestyle options. Healthcare, safety, and general livability are aligned with what you'd expect for a ${location.qualityOfLife.level} rating.`}
             ratingClass={`rating-${location.qualityOfLife.level}`}
-            ratingScore={location.qualityOfLife.score || getDefaultScore(location.qualityOfLife.level)}
             pointScore={location.qualityOfLife.points || getDefaultPoints(location.qualityOfLife.level)}
             factors={location.qualityOfLife.factors || [
               "Healthcare quality and accessibility",
@@ -544,7 +522,6 @@
             ratingText={location.benefits.level} 
             description={location.benefits.description || `The ${location.benefits.level} benefits of ${location.name} include its particular advantages for digital nomads and content creators looking for a productive and enjoyable base of operations.`}
             ratingClass={`rating-${location.benefits.level}`}
-            ratingScore={location.benefits.score || getDefaultScore(location.benefits.level)}
             pointScore={location.benefits.points || getDefaultPoints(location.benefits.level)}
             factors={location.benefits.factors || [
               "Location-specific advantages",
@@ -562,7 +539,6 @@
             ratingText={location.disadvantages.level} 
             description={location.disadvantages.description || `${location.name} does have some ${location.disadvantages.level === 'moderate' ? 'significant' : 'minor'} drawbacks to consider. These challenges are generally ${location.disadvantages.level === 'excellent' || location.disadvantages.level === 'very good' ? 'manageable' : 'more substantial'} for most digital nomads.`}
             ratingClass={`rating-${location.disadvantages.level}`}
-            ratingScore={location.disadvantages.score || getDefaultScore(location.disadvantages.level)}
             pointScore={location.disadvantages.points || getDefaultPoints(location.disadvantages.level)}
             factors={location.disadvantages.factors || [
               "Primary challenges in this location",
@@ -580,7 +556,6 @@
             ratingText={location.internet.level} 
             description={location.internet.description || `Internet quality in ${location.name} is ${location.internet.level}, meeting most digital nomad needs. Speeds and reliability are consistent with what you would expect for a ${location.internet.level} rating in this category.`}
             ratingClass={`rating-${location.internet.level}`}
-            ratingScore={location.internet.score || getDefaultScore(location.internet.level)}
             pointScore={location.internet.points || getDefaultPoints(location.internet.level)}
             factors={location.internet.factors || [
               "Broadband availability and coverage",
@@ -598,7 +573,6 @@
             ratingText={location.legalEase.level} 
             description={location.legalEase.description || `The legal environment for digital nomads in ${location.name} is ${location.legalEase.level}, with processes that are ${location.legalEase.level === 'exceptional' || location.legalEase.level === 'excellent' ? 'straightforward' : 'more complex'} compared to other popular digital nomad destinations.`}
             ratingClass={`rating-${location.legalEase.level}`}
-            ratingScore={location.legalEase.score || getDefaultScore(location.legalEase.level)}
             pointScore={location.legalEase.points || getDefaultPoints(location.legalEase.level)}
             factors={location.legalEase.factors || [
               "Visa process complexity",
@@ -614,10 +588,8 @@
         <td>
           <CellContent 
             ratingText={location.adventure.level} 
-            valueText={`${location.adventure.score}/10`} 
             description={location.adventure.description || `${location.name} provides ${location.adventure.level} adventure opportunities, with a range of experiences available for content creation and personal enjoyment. The variety and uniqueness of adventures is ${location.adventure.level === 'exceptional' || location.adventure.level === 'excellent' ? 'outstanding' : 'good'}.`}
             ratingClass={`rating-${location.adventure.level}`}
-            ratingScore={location.adventure.score / 2}
             pointScore={location.adventure.points || getDefaultPoints(location.adventure.level)}
             factors={location.adventure.factors || [
               "Cultural exploration opportunities",

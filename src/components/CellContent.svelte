@@ -3,14 +3,14 @@
   export let valueText = '';
   export let description = '';
   export let ratingClass = '';
-  export let ratingScore = 0; // Numeric score for star display
   export let factors = []; // Factors that contributed to the rating
   export let pointScore = 0; // Numeric point score (out of 100)
   
   // Function to create star rating out of 10 (no half stars)
-  function getStarRating(score) {
-    // Convert score to be out of 10
-    const adjustedScore = Math.min(Math.round(score * 2), 10);
+  // This now uses the point score (0-100) rather than the star score
+  function getStarRating(pointScore) {
+    // Convert point score (0-100) to stars out of 10
+    const adjustedScore = Math.min(Math.round(pointScore / 10), 10);
     
     let stars = '';
     
@@ -32,8 +32,7 @@
   <div class="cell-rating {ratingClass}">{ratingText}</div>
   
   <!-- Score display -->
-  <div class="cell-stars">{getStarRating(ratingScore)}</div>
-  <div class="cell-points">{pointScore || 0}/100</div>
+  <div class="cell-stars">{getStarRating(pointScore || 0)}</div>
   
   {#if valueText}
     <div class="cell-value">{valueText}</div>

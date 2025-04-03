@@ -166,71 +166,163 @@ export default {
         "description": "Athens offers an excellent balance of adventure opportunities, from exploring ancient ruins to island-hopping across the Greek archipelago.\n\nThe historical adventure aspect is unparalleled, with the Acropolis, Ancient Agora, and numerous museums providing deep connections to the birthplace of Western civilization. Private, after-hours tours can be arranged through diplomatic connections for unique content creation opportunities.\n\nIsland exploration is remarkably accessible, with the port of Piraeus offering daily departures to dozens of islands. From quick day trips to nearby Aegina or Hydra to longer excursions to Cycladic gems like Paros and Naxos, the options are nearly limitless.\n\nThe city itself contains diverse neighborhoods that feel like different worlds, from the bohemian energy of Exarchia to the upscale sophistication of Kolonaki to the coastal vibes of Glyfada—each offering distinct cultural experiences without leaving the city.\n\nOutdoor adventures abound, with nearby Mount Hymettus and Parnitha offering hiking and mountain biking, while the Athens Riviera provides beaches, watersports, and sailing opportunities just minutes from the city center."
       }
     },
-    // Placeholder for other locations that will need similar detailed updates
     {
       "name": "Lisbon, Portugal",
       "color": "#63B3ED",
       "textColor": "#FFFFFF",
       "rating": 8.8,
       "ratingLevel": "excellent",
+      "ratingFactors": [
+        "Strategic position for US and EU time zones",
+        "Excellent digital nomad infrastructure",
+        "Strong expat community and networking",
+        "High standard of living at reasonable cost",
+        "Robust EU legal framework for business"
+      ],
+      "ratingDescription": "Lisbon combines European charm with modern digital infrastructure, making it an excellent choice for streamers targeting both US and European audiences. The thriving international digital nomad community provides networking opportunities, while the straightforward residency options and favorable tax scheme make it administratively practical.",
       "costOfLiving": {
         "low": 1000,
         "mid": 1500,
         "high": 2200,
         "lowDesc": "Room in shared apartment, public transport, budget dining",
         "midDesc": "Modern 1BR apartment, occasional restaurant meals, regular activities",
-        "highDesc": "Premium apartment with view, regular dining out, premium services"
+        "highDesc": "Premium apartment with view, regular dining out, premium services",
+        "points": 75,
+        "factors": [
+          "Higher housing costs in central neighborhoods",
+          "Affordable public transportation system",
+          "Reasonably priced groceries and local markets",
+          "Budget-friendly dining options outside tourist areas",
+          "Lower utility costs than Northern Europe"
+        ]
       },
       "costLevel": "moderate",
       "earnings": {
         "range": "460-560",
         "level": "excellent",
-        "notes": "doubled without agency; ideal US/EU time zone overlap"
+        "notes": "doubled without agency; ideal US/EU time zone overlap",
+        "growthRate": 20,
+        "growthReason": "Perfect time zone for transatlantic audiences; growing tech and startup scene; natural networking hub",
+        "projected": "550-670",
+        "projectionNotes": "Growing market with established digital creator community",
+        "points": 85,
+        "factors": [
+          "Time zone advantage for both US and EU audiences",
+          "High-value collaborations with international creators",
+          "Growing tech scene for sponsorship opportunities",
+          "Established digital nomad network for referrals",
+          "Multiple income stream options from local and international sources"
+        ]
       },
       "financialOpportunities": {
         "level": "very good",
-        "score": 3.5,
-        "description": "NHR tax scheme (20% flat rate); established banking for digital nomads; EU financial passporting"
+        "points": 75,
+        "factors": [
+          "NHR (Non-Habitual Resident) tax scheme with 20% flat rate",
+          "EU financial passporting for banking across Europe",
+          "Emerging startup ecosystem for potential investments",
+          "Growing venture capital presence",
+          "Favorable banking environment for digital businesses"
+        ],
+        "description": "Lisbon offers the significant advantage of Portugal's NHR (Non-Habitual Resident) tax scheme, which provides a 20% flat rate on most income for qualifying individuals for 10 years.\n\nAs an EU member, Portugal offers full financial passporting, allowing seamless access to banking and financial services across the European Union. Modern fintech solutions are widely available, with digital banking fully integrated into daily life.\n\nThe city hosts a growing startup ecosystem, creating potential investment opportunities in early-stage companies. Several accelerators and incubators provide networking within the entrepreneurial community.\n\nOverseas investments are easily managed due to Portugal's favorable banking regulations and low barriers to international financial activities."
       },
       "foodQuality": {
         "score": 8.5,
         "level": "very good",
-        "description": "Fresh seafood; pastéis de nata; excellent wines; affordable high-quality dining"
+        "points": 85,
+        "factors": [
+          "Exceptional fresh seafood directly from the Atlantic",
+          "Rich pastry and bakery culture including famous pastéis de nata",
+          "High-quality local wines at affordable prices",
+          "Diverse international cuisine alongside traditional Portuguese",
+          "Excellent coffee culture with espresso under €1"
+        ],
+        "description": "Lisbon's food scene is a delightful blend of traditional Portuguese cuisine with growing international influences.\n\nSeafood is a standout highlight, with daily catches from the Atlantic featuring prominently on menus across the city. Bacalhau (salted cod) appears in hundreds of preparations, while grilled sardines, octopus, and fresh fish are abundant at reasonable prices.\n\nThe city's pastry culture is world-renowned, with the famous pastéis de nata (custard tarts) being just the beginning of an extraordinary range of baked goods. Local bakeries offer freshly baked bread and pastries at prices significantly lower than Northern Europe.\n\nPortuguese wines represent exceptional value, with excellent bottles available from €5-15 that would cost 3-4 times as much in other countries. The coffee culture is strong, with a typical espresso (bica) costing under €1 in most cafés.\n\nWater quality is good throughout Lisbon, with tap water being safe to drink though some prefer bottled water for taste reasons."
       },
       "socialOpportunities": {
         "level": "excellent",
-        "score": 4.0,
-        "description": "Massive international digital nomad hub; regular meetups; English widely spoken"
+        "points": 90,
+        "factors": [
+          "One of Europe's largest digital nomad communities",
+          "Regular organized meetups, events and conferences",
+          "High English proficiency among locals and businesses",
+          "Welcoming culture with minimal language barriers",
+          "Diverse international community from all over the world"
+        ],
+        "description": "Lisbon has developed into one of Europe's premier digital nomad hubs, offering exceptional social opportunities for remote workers and creators.\n\nThe city hosts a massive international digital nomad community with thousands of remote workers and creators from around the world. This concentration creates natural networking opportunities through organized and impromptu gatherings.\n\nRegular meetups occur multiple times per week across various neighborhoods, with specialized events for different industries and interests. Coworking spaces like Second Home, Heden, and Selina host community events that facilitate connections.\n\nEnglish is widely spoken throughout the city, especially in business settings, removing language barriers that might exist in other European destinations. Even in government offices, English-speaking staff are increasingly common.\n\nThe Portuguese culture is naturally welcoming to foreigners, and the international scene is diverse rather than dominated by any single nationality, creating a truly global atmosphere."
       },
       "qualityOfLife": {
         "level": "excellent",
-        "score": 4.0,
-        "description": "Excellent healthcare; high safety; walkable city; mild climate"
+        "points": 85,
+        "factors": [
+          "Mild climate with 300+ sunny days per year",
+          "High safety levels with low violent crime rates",
+          "Excellent and affordable healthcare system",
+          "Extensive public transportation network",
+          "Walkable neighborhoods with coastal access"
+        ],
+        "description": "The quality of life in Lisbon ranks among the highest in Europe for digital nomads, combining natural advantages with good infrastructure.\n\nThe mild Mediterranean climate offers over 300 sunny days per year, with winters that rarely drop below 10°C (50°F) and comfortable summers that avoid the extreme heat of some other Southern European cities.\n\nSafety is excellent throughout the city, with violent crime being extremely rare. While petty theft can occur in tourist areas, basic precautions are generally sufficient.\n\nThe healthcare system provides high-quality care at affordable prices. Private health insurance costs around €50-100/month for comprehensive coverage, and both public and private hospitals offer excellent standards of care.\n\nThe city is highly walkable with excellent public transportation, including the iconic trams, metro, buses, and trains. Car ownership is unnecessary, and mobility apps make navigation simple for newcomers.\n\nLeisure options abound, from beaches within 20 minutes of the city center to cultural activities, museums, and easy weekend trips to historic towns like Sintra, Cascais, and beyond."
       },
       "benefits": {
         "level": "excellent",
-        "score": 4.0,
-        "description": "Digital Nomad visa program; high English proficiency; strong tech infrastructure"
+        "points": 85,
+        "factors": [
+          "Specialized Digital Nomad Visa program",
+          "High-quality, affordable healthcare access",
+          "Strong English proficiency throughout the city",
+          "Excellent transport links to Europe and US",
+          "Mild year-round climate for outdoor lifestyle"
+        ],
+        "description": "Lisbon offers a suite of benefits that make it particularly attractive for streamers and digital nomads seeking a European base.\n\nPortugal's Digital Nomad Visa program provides a clear legal path for remote workers, with straightforward requirements and processing times averaging 2-3 months. This offers legal certainty and avoids visa runs or legal gray areas common in some destinations.\n\nThe technological infrastructure is robust, with fiber internet widely available and coworking spaces abundant across all neighborhoods. Most cafés offer reliable WiFi, and mobile coverage is excellent with affordable data plans.\n\nStrategic location and excellent flight connections place Lisbon as an ideal bridge between North America and Europe, with direct flights to major hubs and reasonable flight times to both continents.\n\nPortugal's EU membership provides full EU mobility rights, allowing visa-free travel throughout the Schengen Area and legal protections under EU frameworks.\n\nThe city offers an excellent balance of European charm and modern amenities, with historic neighborhoods alongside contemporary development and infrastructure."
       },
       "disadvantages": {
         "level": "good",
-        "score": 2.5,
-        "description": "Higher housing costs; tourist crowds; gentrification"
+        "points": 65,
+        "factors": [
+          "Rising housing costs due to tourism and gentrification",
+          "Seasonal tourist crowding in central areas",
+          "Some bureaucratic processes remain paper-based",
+          "Summer can bring cruise ship crowds to main areas",
+          "Housing quality can vary with insulation/heating issues"
+        ],
+        "description": "While Lisbon offers many advantages, several drawbacks should be considered, particularly regarding housing and tourism impacts.\n\nHousing costs have risen significantly in recent years due to tourism pressures and gentrification. Finding good-value accommodation requires local knowledge or persistence, especially for short-term rentals under 6 months.\n\nTourist crowds can overwhelm central areas, particularly Baixa, Chiado, and parts of Alfama during high season (June-September). This impacts daily life in these neighborhoods, though locals know how to navigate around peak tourist times.\n\nSome bureaucratic processes remain paper-based and can move slowly, particularly for residency applications and tax matters. While improving, government services sometimes require in-person visits and Portuguese language skills.\n\nHousing quality can be inconsistent, with older buildings often lacking adequate insulation and heating. Winter months can feel colder indoors than the actual outdoor temperature would suggest.\n\nNoise can be an issue in central neighborhoods, both from nightlife in places like Bairro Alto and from construction as the city undergoes continuous renovation."
       },
       "internet": {
         "level": "excellent",
-        "score": 4.5,
-        "description": "Up to 1Gbps fiber widely available; very reliable; 200-500Mbps average; competitive market with multiple providers"
+        "points": 90,
+        "factors": [
+          "Fiber internet up to 1Gbps widely available",
+          "Multiple competitive providers with reliable service",
+          "Excellent mobile coverage with affordable data plans",
+          "Strong WiFi infrastructure in cafés and public spaces",
+          "Low latency to both EU and US servers"
+        ],
+        "description": "Lisbon's internet infrastructure is excellent, making it one of Europe's best cities for streamers and digital professionals.\n\nFiber connectivity up to 1Gbps is widely available across most neighborhoods, with providers like MEO, NOS, and Vodafone competing to offer the best service. Installation typically takes 1-2 weeks, and contracts can often be adjusted for shorter terms with proper negotiation.\n\nTypical home connections range from 200-500Mbps, with prices around €30-40/month for reliable high-speed service. These connections are generally very stable with limited downtime.\n\nLatency to European servers averages 30-60ms, while US East Coast servers typically show 100-150ms. This balance makes Lisbon ideal for creators targeting both markets.\n\nMobile data is affordable and reliable, with 4G/5G coverage throughout the city and unlimited data plans available for around €25/month. This provides excellent backup options for critical streaming or work sessions.\n\nMost cafés, restaurants, and public spaces offer free WiFi, and coworking spaces provide enterprise-grade connections with backup systems for professional use."
       },
       "legalEase": {
         "level": "very good",
-        "score": 3.5,
-        "description": "Clear Digital Nomad visa path; straightforward residency process"
+        "points": 75,
+        "factors": [
+          "Clear Digital Nomad Visa pathway",
+          "Relatively straightforward residency process",
+          "Simplified tax system with NHR benefits",
+          "Modernizing government services with online options",
+          "Good availability of English-speaking legal assistance"
+        ],
+        "description": "The legal environment for digital nomads in Lisbon is very good, with clear pathways to legal residency and favorable tax treatment.\n\nPortugal's Digital Nomad Visa provides a clear legal framework specifically designed for remote workers. Requirements include proving regular income of at least €3,040/month (four times the minimum wage), health insurance, and proof of accommodation. The process takes 2-3 months on average.\n\nThe NHR (Non-Habitual Resident) tax scheme offers significant advantages, with a flat 20% tax rate on most income for 10 years. This provides tax predictability and potential savings compared to many other European countries.\n\nResidency processes are well-established though can involve bureaucracy. The SEF (immigration office) handles applications, and while processes have been modernizing, some steps still require in-person visits and paper documentation.\n\nLegal assistance is readily available, with many law firms specializing in helping digital nomads and offering English-language services. Typical costs for full visa assistance range from €1,000-2,000 depending on complexity."
       },
       "adventure": {
         "score": 8,
         "level": "very good",
-        "description": "Surfing; vibrant nightlife; nearby historic towns"
+        "points": 80,
+        "factors": [
+          "Exceptional surfing coast within 30 minutes",
+          "Historic towns and castles for day trips",
+          "Vibrant arts and music scene",
+          "Easy access to diverse Portuguese landscapes",
+          "Rich architectural heritage spanning centuries"
+        ],
+        "description": "Lisbon offers very good adventure opportunities, combining urban exploration with easy access to natural and cultural experiences.\n\nThe surrounding area provides excellent surfing opportunities, with world-class breaks at Carcavelos, Costa da Caparica, and Ericeira all within 30-60 minutes of the city center. Both beginners and experienced surfers find suitable conditions year-round.\n\nHistoric towns like Sintra (a UNESCO World Heritage site) offer fairy-tale castles and palaces set in mystical forests just 40 minutes from Lisbon by train. These make for exceptional content backdrops and cultural experiences.\n\nThe city itself features diverse neighborhoods with distinct personalities, from the medieval streets of Alfama to the elegant avenues of Príncipe Real and the artistic energy of LX Factory and Marvila.\n\nThe vibrant nightlife spans traditional Fado houses to contemporary clubs and bars, particularly in Bairro Alto and Cais do Sodré. The music scene encompasses everything from traditional Portuguese sounds to international electronic music.\n\nLisbon serves as an excellent base for exploring Portugal's diverse landscapes, from the dramatic Atlantic coastline to the rolling wine regions of Alentejo, all accessible for weekend trips."
       }
     },
     {
