@@ -1,0 +1,25 @@
+PREVIEW IMAGE CREATION INSTRUCTIONS
+
+You need to create a preview image file called "preview.png" and place it in this directory:
+/Users/joshkornreich/Documents/Mary moves/public/images/
+
+Image Specifications:
+- File name: preview.png
+- Dimensions: 1200x630 pixels (standard Open Graph image size)
+- Format: PNG with transparent background preferred
+- Content: Create an image showing a world map or digital nomad concept with text "Digital Nomad Location Comparison"
+- Design: Use the earth tone color palette from the app (deep purple, forest green, amber gold)
+- Include: Some visual elements representing the different locations (Athens, Lisbon, Sofia, etc.)
+
+After creating the image:
+1. Place it in this directory
+2. Commit and push it to GitHub
+3. The image URL in the meta tags is set to:
+   https://raw.githubusercontent.com/claudebuildsapps/globe-streaming/main/public/images/preview.png
+
+Alternatives if you can't create a custom image:
+1. Use an existing image from the project
+2. Use a free stock image related to digital nomads or global locations
+3. Create a simple text-based image with the title
+
+Note: For the image to work in Telegram and other platforms, it must be publicly accessible at the URL specified in the meta tags.
