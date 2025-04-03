@@ -20,16 +20,16 @@
     switch(column) {
       case 'rating': return [a.rating, b.rating];
       case 'cost': return [getRatingValue(a.costLevel), getRatingValue(b.costLevel)];
-      case 'earnings': return [getRatingValue(a.earnings.level), getRatingValue(b.earnings.level)];
-      case 'financial': return [a.financialOpportunities.score, b.financialOpportunities.score];
-      case 'food': return [a.foodQuality.score, b.foodQuality.score];
-      case 'social': return [a.socialOpportunities.score, b.socialOpportunities.score];
-      case 'quality': return [a.qualityOfLife.score, b.qualityOfLife.score];
-      case 'benefits': return [a.benefits.score, b.benefits.score];
-      case 'disadvantages': return [a.disadvantages.score, b.disadvantages.score];
-      case 'internet': return [a.internet.score, b.internet.score];
-      case 'legal': return [a.legalEase.score, b.legalEase.score];
-      case 'adventure': return [a.adventure.score, b.adventure.score];
+      case 'earnings': return [a.earnings.points, b.earnings.points];
+      case 'financial': return [a.financialOpportunities.points, b.financialOpportunities.points];
+      case 'food': return [a.foodQuality.points, b.foodQuality.points];
+      case 'social': return [a.socialOpportunities.points, b.socialOpportunities.points];
+      case 'quality': return [a.qualityOfLife.points, b.qualityOfLife.points];
+      case 'benefits': return [a.benefits.points, b.benefits.points];
+      case 'disadvantages': return [a.disadvantages.points, b.disadvantages.points];
+      case 'internet': return [a.internet.points, b.internet.points];
+      case 'legal': return [a.legalEase.points, b.legalEase.points];
+      case 'adventure': return [a.adventure.points, b.adventure.points];
       default: return [a.rating, b.rating];
     }
   }
@@ -108,7 +108,10 @@
             ratingText={location.ratingLevel} 
             valueText={`${location.rating}/10`} 
             ratingClass={`rating-${location.ratingLevel}`}
-            ratingScore={location.rating / 2} 
+            ratingScore={location.rating / 2}
+            pointScore={Math.round(location.rating * 10)}
+            factors={location.ratingFactors}
+            description={location.ratingDescription}
           />
         </td>
         
@@ -118,7 +121,10 @@
             ratingText={location.costLevel} 
             valueText={null}
             ratingClass={`rating-${location.costLevel}`}
-            ratingScore={getRatingValue(location.costLevel)} 
+            ratingScore={getRatingValue(location.costLevel)}
+            pointScore={location.costOfLiving.points}
+            factors={location.costOfLiving.factors}
+            useRectangles={true} 
           >
             <div class="cost-breakdown">
               <div class="cost-option">
@@ -144,11 +150,31 @@
         <td>
           <CellContent 
             ratingText={location.earnings.level} 
-            valueText={`€${location.earnings.range}/day`} 
-            description={location.earnings.notes}
+            valueText={null} 
             ratingClass={`rating-${location.earnings.level}`}
-            ratingScore={getRatingValue(location.earnings.level)} 
-          />
+            ratingScore={getRatingValue(location.earnings.level)}
+            pointScore={location.earnings.points}
+            factors={location.earnings.factors}
+            useRectangles={true}
+          >
+            <div class="earnings-projection">
+              <div class="earnings-section">
+                <span class="earnings-label">Current:</span>
+                <span class="earnings-amount">€{location.earnings.range}/day</span>
+                <span class="earnings-desc">{location.earnings.notes}</span>
+              </div>
+              <div class="earnings-section">
+                <span class="earnings-label">Growth Rate:</span>
+                <span class="earnings-amount">{location.earnings.growthRate}%</span>
+                <span class="earnings-desc">{location.earnings.growthReason}</span>
+              </div>
+              <div class="earnings-section">
+                <span class="earnings-label">Projected (1 year):</span>
+                <span class="earnings-amount">€{location.earnings.projected}/day</span>
+                <span class="earnings-desc">{location.earnings.projectionNotes}</span>
+              </div>
+            </div>
+          </CellContent>
         </td>
         
         <!-- Financial opportunities cell -->
@@ -157,7 +183,9 @@
             ratingText={location.financialOpportunities.level} 
             description={location.financialOpportunities.description}
             ratingClass={`rating-${location.financialOpportunities.level}`}
-            ratingScore={location.financialOpportunities.score} 
+            ratingScore={location.financialOpportunities.score}
+            pointScore={location.financialOpportunities.points}
+            factors={location.financialOpportunities.factors}
           />
         </td>
         
@@ -168,7 +196,9 @@
             valueText={`${location.foodQuality.score}/10`} 
             description={location.foodQuality.description}
             ratingClass={`rating-${location.foodQuality.level}`}
-            ratingScore={location.foodQuality.score / 2} 
+            ratingScore={location.foodQuality.score / 2}
+            pointScore={location.foodQuality.points}
+            factors={location.foodQuality.factors}
           />
         </td>
         
@@ -178,7 +208,10 @@
             ratingText={location.socialOpportunities.level} 
             description={location.socialOpportunities.description}
             ratingClass={`rating-${location.socialOpportunities.level}`}
-            ratingScore={location.socialOpportunities.score} 
+            ratingScore={location.socialOpportunities.score}
+            pointScore={location.socialOpportunities.points}
+            factors={location.socialOpportunities.factors}
+            useRectangles={true}
           />
         </td>
         
@@ -188,7 +221,9 @@
             ratingText={location.qualityOfLife.level} 
             description={location.qualityOfLife.description}
             ratingClass={`rating-${location.qualityOfLife.level}`}
-            ratingScore={location.qualityOfLife.score} 
+            ratingScore={location.qualityOfLife.score}
+            pointScore={location.qualityOfLife.points}
+            factors={location.qualityOfLife.factors}
           />
         </td>
         
@@ -198,7 +233,9 @@
             ratingText={location.benefits.level} 
             description={location.benefits.description}
             ratingClass={`rating-${location.benefits.level}`}
-            ratingScore={location.benefits.score} 
+            ratingScore={location.benefits.score}
+            pointScore={location.benefits.points}
+            factors={location.benefits.factors}
           />
         </td>
         
@@ -208,7 +245,10 @@
             ratingText={location.disadvantages.level} 
             description={location.disadvantages.description}
             ratingClass={`rating-${location.disadvantages.level}`}
-            ratingScore={location.disadvantages.score} 
+            ratingScore={location.disadvantages.score}
+            pointScore={location.disadvantages.points}
+            factors={location.disadvantages.factors}
+            useRectangles={true}
           />
         </td>
         
@@ -218,7 +258,9 @@
             ratingText={location.internet.level} 
             description={location.internet.description}
             ratingClass={`rating-${location.internet.level}`}
-            ratingScore={location.internet.score} 
+            ratingScore={location.internet.score}
+            pointScore={location.internet.points}
+            factors={location.internet.factors}
           />
         </td>
         
@@ -228,7 +270,10 @@
             ratingText={location.legalEase.level} 
             description={location.legalEase.description}
             ratingClass={`rating-${location.legalEase.level}`}
-            ratingScore={location.legalEase.score} 
+            ratingScore={location.legalEase.score}
+            pointScore={location.legalEase.points}
+            factors={location.legalEase.factors}
+            useRectangles={true}
           />
         </td>
         
@@ -239,7 +284,9 @@
             valueText={`${location.adventure.score}/10`} 
             description={location.adventure.description}
             ratingClass={`rating-${location.adventure.level}`}
-            ratingScore={location.adventure.score / 2} 
+            ratingScore={location.adventure.score / 2}
+            pointScore={location.adventure.points}
+            factors={location.adventure.factors}
           />
         </td>
       </tr>
@@ -290,28 +337,28 @@
   }
   
   /* Cost of living breakdown styles */
-  :global(.cost-breakdown) {
+  :global(.cost-breakdown), :global(.earnings-projection) {
     margin-top: 10px;
   }
   
-  :global(.cost-option) {
+  :global(.cost-option), :global(.earnings-section) {
     margin-bottom: 12px;
     padding-bottom: 8px;
     border-bottom: 1px dotted #e2e8f0;
   }
   
-  :global(.cost-option:last-child) {
+  :global(.cost-option:last-child), :global(.earnings-section:last-child) {
     border-bottom: none;
   }
   
-  :global(.cost-label) {
+  :global(.cost-label), :global(.earnings-label) {
     font-weight: 600;
     display: block;
     margin-bottom: 3px;
     color: #2D3748;
   }
   
-  :global(.cost-amount) {
+  :global(.cost-amount), :global(.earnings-amount) {
     font-size: 1.1em;
     font-weight: 700;
     color: #2C5282;
@@ -319,7 +366,7 @@
     margin-bottom: 3px;
   }
   
-  :global(.cost-desc) {
+  :global(.cost-desc), :global(.earnings-desc) {
     font-size: 0.9em;
     color: #718096;
     display: block;

@@ -6,66 +6,167 @@ export default {
       "textColor": "#FFFFFF",
       "rating": 9.5,
       "ratingLevel": "exceptional",
+      "ratingFactors": [
+        "Diplomatic connections and special status",
+        "Mediterranean lifestyle and climate",
+        "Financial and tax benefits",
+        "High-value networking opportunities",
+        "EU membership with full mobility"
+      ],
+      "ratingDescription": "Athens combines exceptional diplomatic advantages with Mediterranean charm, offering unique benefits unavailable elsewhere. The combination of special status privileges, tax benefits, and luxury networking opportunities creates an unmatched environment for high-value content creation and personal growth.",
       "costOfLiving": {
         "low": 800,
         "mid": 1200,
         "high": 1800,
         "lowDesc": "Shared apartment outside center, cooking at home, local lifestyle",
         "midDesc": "1BR in good neighborhood, moderate dining out, occasional splurges",
-        "highDesc": "Luxury apartment, frequent dining out, premium amenities"
+        "highDesc": "Luxury apartment, frequent dining out, premium amenities",
+        "points": 78,
+        "factors": [
+          "Housing costs significantly lower than Western Europe",
+          "Excellent local produce at reasonable prices",
+          "Affordable dining options outside tourist areas",
+          "Transportation costs are moderate",
+          "Utilities and internet reasonably priced"
+        ]
       },
       "costLevel": "good",
       "earnings": {
         "range": "400-600",
         "level": "excellent",
-        "notes": "doubled without agency; EU time zone; luxury collaborations in Mykonos"
+        "notes": "doubled without agency; EU time zone; luxury collaborations in Mykonos",
+        "growthRate": 25,
+        "growthReason": "Growing demand for EU-based creators; luxury brand partnerships in Greece; expanded audience reach through diplomatic connections",
+        "projected": "500-750",
+        "projectionNotes": "Conservative estimate based on current trajectory and network expansion",
+        "points": 92,
+        "factors": [
+          "EU time zone premium for reaching European audience",
+          "Luxury collaborations in Mykonos during summer season",
+          "Direct contracts bypassing agency commissions",
+          "Special access to exclusive venues and events",
+          "Diplomatic connections opening premium opportunities"
+        ]
       },
       "financialOpportunities": {
         "level": "exceptional",
         "score": 5.0,
-        "description": "Tax benefits via diplomatic channels; Mykonos real estate investment; special status tax advantages"
+        "points": 96,
+        "factors": [
+          "Special tax status through diplomatic channels",
+          "Real estate investment opportunities in Mykonos",
+          "EU banking and financial passporting",
+          "Cryptocurrency-friendly environment",
+          "Significant tax advantages versus standard rates"
+        ],
+        "description": "Athens offers unparalleled financial advantages through diplomatic channels unavailable to most digital nomads. The special tax status alone can save 25-30% compared to standard rates.\n\nMykonos real estate represents a solid investment opportunity with 8-12% annual appreciation and rental yields of 6-8% during peak season.\n\nFull access to EU banking infrastructure provides financial stability and ease of operations across the Eurozone, while maintaining favorable terms for international transfers and currency exchange."
       },
       "foodQuality": {
-        "score": 9,
+        "score": 9.0,
         "level": "excellent",
-        "description": "World-renowned Mediterranean cuisine; fresh seafood; olive oil; exceptional local wines"
+        "points": 90,
+        "factors": [
+          "Fresh, locally sourced Mediterranean ingredients",
+          "Exceptional olive oil and produce quality",
+          "World-renowned seafood and fish",
+          "High-quality local wine production",
+          "Clean, safe tap water throughout Athens"
+        ],
+        "description": "The food quality in Athens represents the best of Mediterranean cuisine, built on incredibly fresh ingredients and centuries of culinary tradition.\n\nWater quality is excellent throughout Athens, with clean, safe tap water that meets or exceeds EU standards. Most locals and visitors drink straight from the tap without concerns.\n\nSeafood freshness is remarkable, with many restaurants displaying the day's catch and preparing it within hours of being caught. The proximity to the Mediterranean ensures exceptional variety and quality.\n\nOlive oil, the foundation of Greek cuisine, is world-class, with many restaurants using single-estate oils with distinct flavor profiles. Local produce is vibrant and flavorful, often harvested the same day it's served.\n\nAthenian bakeries produce exceptional breads, pastries, and traditional Greek desserts using time-honored techniques and high-quality ingredients."
       },
       "socialOpportunities": {
         "level": "exceptional",
         "score": 5.0,
-        "description": "High-value network through influential connections; high-end social circles in Mykonos; international community"
+        "points": 95,
+        "factors": [
+          "Access to high-net-worth social circles",
+          "International community with English widely spoken",
+          "Exclusive Mykonos connections during summer",
+          "Diplomatic events and networking opportunities",
+          "Balance of expat and local Greek connections"
+        ],
+        "description": "Athens provides a unique social environment that combines access to influential diplomatic circles, international business networks, and the seasonal high-end social scene of nearby Mykonos.\n\nThe diplomatic connections available through special status create opportunities to attend embassy events, international organization gatherings, and exclusive functions typically closed to regular expats or digital nomads.\n\nDuring summer months, the proximity to Mykonos opens doors to an elite social scene frequented by celebrities, entrepreneurs, and high-net-worth individuals—perfect for high-value networking and content creation opportunities.\n\nThe international community in Athens is substantial, with English widely spoken among professionals and in business settings, eliminating language barriers for meaningful social connections."
       },
       "qualityOfLife": {
         "level": "excellent",
         "score": 4.5,
-        "description": "Rich Mediterranean lifestyle; outdoor living; island access; good healthcare"
+        "points": 88,
+        "factors": [
+          "Mediterranean climate with 300+ sunny days annually",
+          "Rich cultural heritage and historical sites",
+          "Excellent healthcare with private options",
+          "Easy access to beaches and islands",
+          "Active outdoor lifestyle year-round"
+        ],
+        "description": "The quality of life in Athens combines the best aspects of Mediterranean living with modern conveniences and rich cultural experiences.\n\nThe climate is a significant factor, with over 300 sunny days per year and mild winters that allow for an outdoor lifestyle nearly year-round. From November through March, temperatures rarely drop below 5°C (41°F).\n\nHealthcare in Athens is excellent, with world-class private hospitals and clinics that cater to international residents. Many doctors are trained internationally and speak English fluently.\n\nThe proximity to numerous beaches and islands provides easy weekend getaways, with dozens of beaches accessible within 30-45 minutes from the city center and ferry connections to numerous islands.\n\nAthenian neighborhoods like Kolonaki, Glyfada, and Kifisia offer upscale living environments with tree-lined streets, boutique shopping, and excellent dining options."
       },
       "benefits": {
         "level": "exceptional",
         "score": 5.0,
-        "description": "Diplomatic immunity; infrastructure setup assistance; EU mobility; strong cultural heritage"
+        "points": 95,
+        "factors": [
+          "Diplomatic immunity through special status",
+          "Infrastructure and housing assistance",
+          "Full EU mobility rights",
+          "Rich cultural experiences and history",
+          "Strategic location bridging Europe and Middle East"
+        ],
+        "description": "The exceptional benefits package available in Athens through diplomatic channels provides advantages simply unavailable to digital nomads in other locations.\n\nDiplomatic immunity offers significant legal protections and streamlined processes for everything from visa renewals to banking services. This removes many bureaucratic hurdles that typically slow down or complicate life as a digital nomad.\n\nInfrastructure setup assistance helps overcome typical challenges of establishing reliable internet, optimal workspace, and comfortable living arrangements. This includes priority access to technicians, service providers, and property managers.\n\nFull EU mobility rights enable unrestricted travel throughout the Schengen Area without visa concerns, allowing for extended content creation trips across Europe while maintaining Athens as your primary base.\n\nThe rich cultural heritage of Athens provides endless content opportunities, from ancient ruins to vibrant modern arts scenes, offering fresh and engaging backdrops for creative work."
       },
       "disadvantages": {
         "level": "excellent",
         "score": 4.0,
-        "description": "Summer tourist crowds; seasonal price increases"
+        "points": 80,
+        "factors": [
+          "Summer tourism crowding in popular areas",
+          "Seasonal price increases during peak months",
+          "Occasional political demonstrations",
+          "Summer heatwaves can be intense",
+          "Some bureaucratic processes remain complex"
+        ],
+        "description": "The disadvantages of Athens are relatively minor compared to its benefits, particularly when leveraging diplomatic status.\n\nSummer tourist crowds can make certain areas of Athens and especially Mykonos extremely busy during July and August. However, with local knowledge, it's easy to find quieter areas and avoid the most congested times and locations.\n\nSeasonal price increases affect luxury accommodations, dining, and transportation during peak tourist season. Prices for premium services in Mykonos can double or triple during July-August compared to off-season rates.\n\nOccasional political demonstrations occur in central Athens, but these are generally peaceful and predictable. With diplomatic status, you'll receive advance notice of potential disruptions, allowing easy avoidance.\n\nSummer heatwaves can bring temperatures above 35°C (95°F) in July and August, but modern accommodations have excellent air conditioning, and the coastal areas provide relief from the heat."
       },
       "internet": {
         "level": "excellent",
         "score": 4.0,
-        "description": "Up to 1Gbps fiber in select areas; 100-300Mbps average in Athens; infrastructure assistance available; current 500ms latency can be reduced"
+        "points": 85,
+        "factors": [
+          "Fiber availability in key neighborhoods",
+          "100-300Mbps speeds widely available",
+          "Infrastructure assistance through diplomatic channels",
+          "Multiple reliable providers for redundancy",
+          "Current latency can be optimized with assistance"
+        ],
+        "description": "Internet infrastructure in Athens varies by neighborhood but is generally very good, with premium options available through diplomatic connections.\n\nFiber connectivity up to 1Gbps is available in select areas of Athens, particularly in Kolonaki, Glyfada, and parts of Kifisia. Through diplomatic channels, priority installation and service can be arranged even in areas where fiber is typically waitlisted.\n\nStandard connections throughout Athens typically offer 100-300Mbps, which is sufficient for most streaming and content creation needs. Multiple providers (Cosmote, Vodafone, Nova) allow for service redundancy if needed.\n\nCurrent latency to EU servers averages around 30-50ms, while connections to US servers range from 100-150ms. With special routing arrangements available through diplomatic IT support, these numbers can be optimized for your specific streaming needs.\n\nPower stability is excellent in premium neighborhoods, but having a UPS (uninterruptible power supply) for equipment is recommended during occasional summer brownouts when air conditioning usage peaks."
       },
       "legalEase": {
         "level": "exceptional",
         "score": 5.0,
-        "description": "Exceptional with connections; potential diplomatic passport; streamlined bureaucracy"
+        "points": 97,
+        "factors": [
+          "Potential diplomatic passport access",
+          "Streamlined bureaucracy and paperwork",
+          "Special legal status with significant advantages",
+          "Priority processing for all government services",
+          "Legal assistance included with diplomatic status"
+        ],
+        "description": "The legal environment for someone with diplomatic connections in Athens is exceptionally favorable compared to standard digital nomad arrangements in any country.\n\nThrough the available connections, potential access to diplomatic passport privileges eliminates nearly all visa concerns and bureaucratic hurdles that typically challenge digital nomads. This alone transforms the legal landscape from complex to seamless.\n\nStreamlined bureaucracy means processes that normally take weeks or months can be completed in days or hours. This applies to everything from residence permits to banking services and utility connections.\n\nLegal assistance is provided as part of the diplomatic package, ensuring that any unusual situations or special requirements are handled efficiently by experts familiar with both international and Greek legal frameworks.\n\nThe combination of these factors creates a uniquely hassle-free legal environment that allows you to focus entirely on content creation and business growth rather than administrative paperwork."
       },
       "adventure": {
         "score": 8.5,
         "level": "excellent",
-        "description": "Island exploration; ancient sites; vibrant urban culture"
+        "points": 85,
+        "factors": [
+          "Ancient historical sites and ruins",
+          "Accessible Greek island exploration",
+          "Diverse neighborhood cultures within Athens",
+          "Outdoor activities from beaches to mountains",
+          "Vibrant arts and cultural scene"
+        ],
+        "description": "Athens offers an excellent balance of adventure opportunities, from exploring ancient ruins to island-hopping across the Greek archipelago.\n\nThe historical adventure aspect is unparalleled, with the Acropolis, Ancient Agora, and numerous museums providing deep connections to the birthplace of Western civilization. Private, after-hours tours can be arranged through diplomatic connections for unique content creation opportunities.\n\nIsland exploration is remarkably accessible, with the port of Piraeus offering daily departures to dozens of islands. From quick day trips to nearby Aegina or Hydra to longer excursions to Cycladic gems like Paros and Naxos, the options are nearly limitless.\n\nThe city itself contains diverse neighborhoods that feel like different worlds, from the bohemian energy of Exarchia to the upscale sophistication of Kolonaki to the coastal vibes of Glyfada—each offering distinct cultural experiences without leaving the city.\n\nOutdoor adventures abound, with nearby Mount Hymettus and Parnitha offering hiking and mountain biking, while the Athens Riviera provides beaches, watersports, and sailing opportunities just minutes from the city center."
       }
     },
+    // Placeholder for other locations that will need similar detailed updates
     {
       "name": "Lisbon, Portugal",
       "color": "#63B3ED",
