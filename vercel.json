@@ -3,9 +3,6 @@
   "builds": [
     { "src": "package.json", "use": "@vercel/static-build" }
   ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/$1" }
-  ],
   "github": {
     "enabled": true,
     "silent": false
@@ -32,5 +29,6 @@
         }
       ]
     }
-  ]
+  ],
+  "cleanUrls": true
 }
