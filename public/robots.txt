@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://globe-streaming.vercel.app/sitemap.xml

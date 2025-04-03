@@ -1,0 +1,10 @@
+This file is a placeholder for the preview image.
+
+For Vercel to properly serve your preview image:
+
+1. Create a JPG image named "preview.jpg" (1200x630 pixels)
+2. Place it in the PUBLIC directory (not in a subdirectory)
+3. Replace this text file with the actual image
+4. Make sure the image is properly committed and pushed
+
+The OG tags now point to: https://globe-streaming.vercel.app/preview.jpg
