@@ -619,7 +619,7 @@
   }
   
   .location-table th {
-    background-color: #5D4037; /* Warm brown */
+    background-color: #5D2E8C; /* Deep purple - matches the exceptional rating color */
     color: white;
     padding: 15px 20px;
     text-align: left;
@@ -634,7 +634,7 @@
   }
   
   .location-table th:hover {
-    background-color: #7D5A50; /* Lighter brown on hover */
+    background-color: #7B46B2; /* Lighter purple on hover */
   }
   
   .sort-indicator {
