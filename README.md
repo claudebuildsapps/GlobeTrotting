@@ -1,6 +1,6 @@
-# Location Comparison Table (Svelte Version)
+# PrideLess - Location Comparison Tool
 
-A Svelte-based application for comparing locations for streamers and digital nomads.
+A Svelte-based application for comparing locations for digital nomads.
 
 ## Getting Started
 

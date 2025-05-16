@@ -324,7 +324,7 @@
                 €{calculateAnnualEarnings(location).annual}/year
               </div>
               <div class="projection-note">
-                Based on avg. 20 stream days/month
+                Based on avg. 20 work days/month
               </div>
             </div>
           </div>
@@ -348,11 +348,11 @@
             factors={location.ratingFactors || [
               "Overall livability assessment",
               "Balance of all criteria",
-              "Value for digital nomads/streamers",
+              "Value for digital nomads",
               "Location-specific advantages",
               "Potential for long-term residence"
             ]}
-            description={location.ratingDescription || `${location.name} offers a ${location.ratingLevel} environment for digital nomads and streamers, balancing cost of living with quality of life and earning potential.`}
+            description={location.ratingDescription || `${location.name} offers a ${location.ratingLevel} environment for digital nomads, balancing cost of living with quality of life and earning potential.`}
           />
         </td>
         
@@ -432,7 +432,7 @@
               <div class="earnings-section">
                 <span class="earnings-label">Monthly Growth Rate:</span>
                 <span class="earnings-amount">{calculateAnnualEarnings(location).monthlyRate}% per month</span>
-                <span class="earnings-desc">{location.earnings.growthReason || `Enhanced growth projections for excellent streamer in ${location.name} market`}</span>
+                <span class="earnings-desc">{location.earnings.growthReason || `Enhanced growth projections for excellent digital nomad in ${location.name} market`}</span>
               </div>
               <div class="earnings-section">
                 <span class="earnings-label">Year-End Daily Rate:</span>
@@ -442,7 +442,7 @@
               <div class="earnings-section annual-projection">
                 <span class="earnings-label">Annual Earnings:</span>
                 <span class="earnings-amount">€{calculateAnnualEarnings(location).annual}/year</span>
-                <span class="earnings-desc">Based on 20 stream days per month with compounded growth</span>
+                <span class="earnings-desc">Based on 20 work days per month with compounded growth</span>
               </div>
             </div>
           </CellContent>

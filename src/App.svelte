@@ -20,7 +20,7 @@
 </script>
 
 <main>
-  <h1>Location Comparison for Streamers/Digital Nomads</h1>
+  <h1>PrideLess - Location Comparison for Digital Nomads</h1>
   
   <div class="table-container">
     <LocationTable {locations} />
